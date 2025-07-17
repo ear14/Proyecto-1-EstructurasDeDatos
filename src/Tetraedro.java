@@ -8,6 +8,7 @@ public class Tetraedro extends Cuerpo{
     public Tetraedro(float ladoEquilatero){
         super("Tetraedro");
         this.equilatero = new Equilatero(ladoEquilatero);
+        agregarFigura(equilatero)
     }
 
     @Override
