@@ -1,17 +1,16 @@
 
-
+import java.util.ArrayList;
 public abstract class Cuerpo implements Forma{
 
 
     //atributo
     protected String nombre;
-    protected Figura figura;
+    private ArrayList<Figura> figuras_componentes = new ArrayList<>();
 
 
     //constructor   no se como poner figura
     public Cuerpo(String nombreObjeto){
         this.nombre = nombreObjeto;
-        //this.figura = figuraObjeto;
     }
 
     //getters
@@ -28,12 +27,19 @@ public abstract class Cuerpo implements Forma{
     public boolean equals(String nombreComparar){return this.nombre.equals(nombreComparar);}
 
     public String toString(){
-        return "Cuerpo: " + this.nombre;
+        String info = "Cuerpo: " + this.nombre;
+        for (Figura f : figuras) {
+            info += "\nFigura componente: " + f.getNombre() + " - " + f.toString();
+        }
+        return info;
     }
 
 
-    //metodos abstractos
+    public void agregarFigura(Figura figura){
+        this.figuras_componentes.add(figura);
+    }
 
+    //metodos abstractos
     abstract float calcularVolumen();
 
 

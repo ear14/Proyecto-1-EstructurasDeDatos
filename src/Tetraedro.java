@@ -15,8 +15,4 @@ public class Tetraedro extends Cuerpo{
         float lado = equilatero.getLado(); 
         return (float)(Math.pow(lado, 3) / (6 * Math.sqrt(2)));
     }
-
-    public String toString(){
-        return super.toString() + "\nFiguras componentes: " + equilatero.getNombre();
-    }
 }

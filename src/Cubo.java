@@ -5,8 +5,9 @@ public class Cubo extends Cuerpo {
 
     // Constructor con parámetro
     public Cubo(float ladoCuadrado) {
-        super("Cubo");
+        super("Cubo", cuadrado);
         this.cuadrado = new Cuadrado(ladoCuadrado);
+        agregarFigura(cuadrado);
     }
 
     @Override
