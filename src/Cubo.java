@@ -1,3 +1,4 @@
+package negocio.cuerpos;
 public class Cubo extends Cuerpo {
 
     // Atributo

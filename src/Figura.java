@@ -1,5 +1,4 @@
 package negocio.figuras;
-
 import negocio.Forma;
 
 public abstract class Figura implements Forma {

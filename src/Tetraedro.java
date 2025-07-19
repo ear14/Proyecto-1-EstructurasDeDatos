@@ -1,3 +1,5 @@
+package negocio.cuerpos;
+
 public class Tetraedro extends Cuerpo{
     
 

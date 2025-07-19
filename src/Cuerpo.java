@@ -1,4 +1,4 @@
-
+package negocio.cuerpos;
 import java.util.ArrayList;
 public abstract class Cuerpo implements Forma{
 
