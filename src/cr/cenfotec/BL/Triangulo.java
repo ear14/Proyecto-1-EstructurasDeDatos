@@ -36,7 +36,6 @@ public abstract class Triangulo extends Figura {
 
     @Override
     public void imprimirInformacion() {
-        System.out.println("=== " + getColor() + " ===");
         System.out.println("Lados: " + lado1 + ", " + lado2 + ", " + lado3);
         System.out.println("Area: " + calcularArea());
         System.out.println("Perímetro: " + calcularPerimetro());
