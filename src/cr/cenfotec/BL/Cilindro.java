@@ -23,17 +23,17 @@ public class Cilindro extends Cuerpo {
     }
 
     @Override
-    public Float calcularPerimetro() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPerimetro'");
+    public float calcularPerimetro() {
+        return (float)(2 * Math.PI * circulo.getRadio());
     }
 
     @Override
     public float calcularArea() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularArea'");
+        float r = circulo.getRadio();
+        float h = rectangulo.getAltura();
+        return (float)(2 * Math.PI * r * (r + h));
     }
-
+    
     @Override
     public boolean equals() {
         // TODO Auto-generated method stub
