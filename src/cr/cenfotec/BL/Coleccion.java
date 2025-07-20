@@ -47,7 +47,7 @@ public class Coleccion{
         for (Cuerpo cuerpo : this.coleccionCuerpos){
                     periCuerpo += cuerpo.calcularPerimetro(); 
         }
-        System.out.println("El perimetro de las figuras es: " + areaFigura + "\n El area de los cuerpos es: " + areaCuerpo)
+        System.out.println("El perimet de las figuras es: " + areaFigura + "\n El area de los cuerpos es: " + areaCuerpo)
     }
 
     public void calcularVolumen(){
