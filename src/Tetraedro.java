@@ -1,4 +1,5 @@
 package negocio.cuerpos;
+import negocio.figuras.Equilatero;
 
 public class Tetraedro extends Cuerpo{
     
@@ -13,6 +14,7 @@ public class Tetraedro extends Cuerpo{
         agregarFigura(equilatero)
     }
 
+    //metodo para calcular el volumen
     @Override
     float calcularVolumen() {
         float lado = equilatero.getLado(); 

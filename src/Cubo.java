@@ -1,23 +1,21 @@
 package negocio.cuerpos;
+import negocio.figuras.Cuadrado;
+
 public class Cubo extends Cuerpo {
 
     // Atributo
     private Cuadrado cuadrado;
 
-    // Constructor con parámetro
+    // Constructor 
     public Cubo(float ladoCuadrado) {
-        super("Cubo", cuadrado);
+        super("Cubo");
         this.cuadrado = new Cuadrado(ladoCuadrado);
         agregarFigura(cuadrado);
     }
 
+    //metodo para calcular el volumen
     @Override
     float calcularVolumen() {
         return (float)Math.pow(cuadrado.getBase(), 3);
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + "\nFigura componente: " + cuadrado.getNombre() + " - " + cuadrado.toString();
     }
 }

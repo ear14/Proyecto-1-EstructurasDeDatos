@@ -1,5 +1,8 @@
 package negocio.cuerpos;
+import negocio.Forma;
+import negocio.figuras.Figura;
 import java.util.ArrayList;
+
 public abstract class Cuerpo implements Forma{
 
 
@@ -8,7 +11,7 @@ public abstract class Cuerpo implements Forma{
     private ArrayList<Figura> figuras_componentes = new ArrayList<>();
 
 
-    //constructor   no se como poner figura
+    //constructor   
     public Cuerpo(String nombreObjeto){
         this.nombre = nombreObjeto;
     }
@@ -28,7 +31,7 @@ public abstract class Cuerpo implements Forma{
 
     public String toString(){
         String info = "Cuerpo: " + this.nombre;
-        for (Figura f : figuras) {
+        for (Figura f : figuras_componentes) {
             info += "\nFigura componente: " + f.getNombre() + " - " + f.toString();
         }
         return info;
