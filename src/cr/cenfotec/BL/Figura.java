@@ -1,5 +1,4 @@
-package negocio.figuras;
-import negocio.Forma;
+package cr.cenfotec.BL;
 
 public abstract class Figura implements Forma {
     protected String nombre;

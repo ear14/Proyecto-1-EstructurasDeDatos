@@ -1,10 +1,11 @@
-package negocio.figuras;
+package cr.cenfotec.BL;
+
 
 public class Rectangulo extends Figura {
-    private double base;
-    private double altura;
+    private Float base;
+    private Float altura;
 
-    public Rectangulo(double base, double altura) {
+    public Rectangulo(Float base, Float altura) {
         super("Rectángulo");
         this.base = base;
         this.altura = altura;
@@ -19,12 +20,12 @@ public class Rectangulo extends Figura {
     }
 
     @Override
-    public double calcularPerimetro() {
+    public Float calcularPerimetro() {
         return 2 * (base + altura);
     }
 
     @Override
-    public double calcularArea() {
+    public float calcularArea() {
         return base * altura;
     }
 
@@ -39,5 +40,11 @@ public class Rectangulo extends Figura {
         Rectangulo otro = (Rectangulo) obj;
         return Double.compare(otro.base, base) == 0 && 
                Double.compare(otro.altura, altura) == 0;
+    }
+
+    @Override
+    public boolean equals() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'equals'");
     }
 }

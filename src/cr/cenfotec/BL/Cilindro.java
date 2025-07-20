@@ -1,6 +1,4 @@
-package negocio.cuerpos;
-import negocio.figuras.Circulo; //se importan los paquetes en donde estan las clases que se necesitan
-import negocio.figuras.Rectangulo;
+package cr.cenfotec.BL;
 
 public class Cilindro extends Cuerpo {
 
@@ -22,6 +20,24 @@ public class Cilindro extends Cuerpo {
     @Override
     float calcularVolumen() {
         return (float)(Math.PI * Math.pow(circulo.getRadio(), 2) * rectangulo.getAltura());
+    }
+
+    @Override
+    public Float calcularPerimetro() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularPerimetro'");
+    }
+
+    @Override
+    public float calcularArea() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularArea'");
+    }
+
+    @Override
+    public boolean equals() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'equals'");
     }
 
 }

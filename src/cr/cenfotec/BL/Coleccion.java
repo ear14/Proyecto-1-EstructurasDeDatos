@@ -1,9 +1,13 @@
+//Importaciones y paquetes
+
+package cr.cenfotec.BL;
+import java.util.ArrayList;
+
 public class Coleccion{
-    //Importaciones y paquetes
-    import java.util.ArrayList;
+    
     //Atributos
-    private List<Cuerpo> coleccionCuerpos = new ArrayList<Cuerpo>;
-    private List<Figura> coleccionFiguras = new ArrayList<Figura>;
+    private ArrayList<Cuerpo> coleccionCuerpos = new ArrayList<>();
+    private ArrayList<Figura> coleccionFiguras = new ArrayList<>();
 
     //Metodos
     public void agregarFigura(Figura figura){
@@ -16,38 +20,39 @@ public class Coleccion{
 
     public void listarFiguras(){
         for (Figura figura : this.coleccionFiguras){
-            System.out.println("Figura #" + figura.indexOf(i) + ":" + figura.toString());
+            System.out.println("Figura #" + coleccionFiguras.indexOf(figura)  + ":" + figura.toString());
         }
     }
 
     public void listarCuerpos(){
-        for (Cuerpo figura : this.coleccionFiguras){
-            System.out.println("Figura #" + figura.indexOf(i) + ":" + figura.toString());
+        
+        for (Cuerpo cuerpo : this.coleccionCuerpos){
+            System.out.println("Cuerpo #" + coleccionCuerpos.indexOf(cuerpo) + ":" + cuerpo.toString());
         }
     }
 
     public void calcularAreaTotal(){
-        double areaFigura;
-        double areaCuerpo;
+        float areaFigura = 0;
+        float areaCuerpo = 0;
         for (Figura figura : this.coleccionFiguras){
-                    areaFigura += figura.calcularArea(); 
+                    areaFigura = areaFigura + figura.calcularArea(); 
         }
         for (Cuerpo cuerpo : this.coleccionCuerpos){
                     areaCuerpo += cuerpo.calcularArea(); 
         }
-        System.out.println("El area de las figuras es: " + areaFigura + "\n El area de los cuerpos es: " + areaCuerpo)
+        System.out.println("El area de las figuras es: " + areaFigura + "\n El area de los cuerpos es: " + areaCuerpo); 
     }
 
     public void calcularPerimetroTotal(){
-        double periFigura;
-        double periCuerpo;
+        float periFigura = 0;
+        float periCuerpo = 0;
         for (Figura figura : this.coleccionFiguras){
                     periFigura += figura.calcularPerimetro(); 
         }
         for (Cuerpo cuerpo : this.coleccionCuerpos){
                     periCuerpo += cuerpo.calcularPerimetro(); 
         }
-        System.out.println("El perimet de las figuras es: " + areaFigura + "\n El area de los cuerpos es: " + areaCuerpo)
+        System.out.println("El perimetro de las figuras es: " + periFigura + "\n El perimetro de los cuerpos es: " + periCuerpo);
     }
 
     public void calcularVolumen(){

@@ -1,6 +1,4 @@
-package negocio.cuerpos;
-import negocio.Forma;
-import negocio.figuras.Figura;
+package cr.cenfotec.BL;
 import java.util.ArrayList;
 
 public abstract class Cuerpo implements Forma{
@@ -18,7 +16,7 @@ public abstract class Cuerpo implements Forma{
 
     //getters
     public String getNombre() {return this.nombre;}
-    public Figura getFigura() {return this.figura;}
+    public ArrayList<Figura> getFigurasConponentes() {return this.figuras_componentes;}
 
 
     //metodos de interfaz
