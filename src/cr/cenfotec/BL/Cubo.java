@@ -1,38 +1,42 @@
 package cr.cenfotec.BL;
 
 public class Cubo extends Cuerpo {
+    private float arista;
 
-    // Atributo
-    private Cuadrado cuadrado;
-
-    // Constructor 
-    public Cubo(float ladoCuadrado) {
-        super("Cubo");
-        this.cuadrado = new Cuadrado(ladoCuadrado);
-        agregarFigura(cuadrado);
-    }
-
-    //metodo para calcular el volumen
-    @Override
-    float calcularVolumen() {
-        return (float)Math.pow(cuadrado.getBase(), 3);
+    public Cubo(float arista) {
+        super(new Cuadrado(arista)); 
+        this.arista = arista;
     }
 
     @Override
-    public Float calcularPerimetro() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPerimetro'");
+    public double calcularVolumen() {
+        return Math.pow(arista, 3);
     }
 
     @Override
-    public float calcularArea() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularArea'");
+    public double calcularArea() {
+        return 6 * Math.pow(arista, 2); 
     }
 
     @Override
-    public boolean equals() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'equals'");
+    public double calcularPerimetro() {
+        return 12 * arista; 
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Cubo cubo = (Cubo) obj;
+        return Float.compare(cubo.arista, arista) == 0;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Cubo [arista=%.2f]", arista);
+    }
+
+    // Getter
+    public float getArista() {
+        return arista;
     }
 }
