@@ -35,9 +35,14 @@ public class Cilindro extends Cuerpo {
     }
     
     @Override
-    public boolean equals() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'equals'");
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Cilindro otro = (Cilindro) obj;
+        return this.nombre.equals(otro.getNombre()) &&
+            this.circulo.getRadio() == otro.circulo.getRadio() &&
+            this.rectangulo.getAltura() == otro.rectangulo.getAltura();
     }
 
 }
