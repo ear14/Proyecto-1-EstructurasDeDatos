@@ -30,16 +30,24 @@ public class Coleccion{
         double areaFigura;
         double areaCuerpo;
         for (Figura figura : this.coleccionFiguras){
-                    areaFigura = figura.calcularArea(); 
+                    areaFigura += figura.calcularArea(); 
         }
         for (Cuerpo cuerpo : this.coleccionCuerpos){
-                    areaCuerpo = cuerpo.calcularArea(); 
+                    areaCuerpo += cuerpo.calcularArea(); 
         }
-        System.out.println()
+        System.out.println("El area de las figuras es: " + areaFigura + "\n El area de los cuerpos es: " + areaCuerpo)
     }
 
     public void calcularPerimetroTotal(){
-
+        double periFigura;
+        double periCuerpo;
+        for (Figura figura : this.coleccionFiguras){
+                    periFigura += figura.calcularPerimetro(); 
+        }
+        for (Cuerpo cuerpo : this.coleccionCuerpos){
+                    periCuerpo += cuerpo.calcularPerimetro(); 
+        }
+        System.out.println("El perimetro de las figuras es: " + areaFigura + "\n El area de los cuerpos es: " + areaCuerpo)
     }
 
     public void calcularVolumen(){
