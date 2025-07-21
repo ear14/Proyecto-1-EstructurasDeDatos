@@ -35,7 +35,7 @@ public class Cubo extends Cuerpo {
         Cubo cubo = (Cubo) obj;
         return Double.compare(cubo.getCuadrado().getLado(), cuadrado.getLado()) == 0;
     }
-
+    @Override
     public String toString() {
         return ("Cuadrado: " + cuadrado);
     }

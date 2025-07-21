@@ -45,5 +45,4 @@ public class Cilindro extends Cuerpo {
             this.circulo.getRadio() == otro.circulo.getRadio() &&
             this.rectangulo.getAltura() == otro.rectangulo.getAltura();
     }
-
 }

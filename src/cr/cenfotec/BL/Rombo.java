@@ -1,45 +1,49 @@
 package cr.cenfotec.BL;
 
+public class Rombo extends Figura {
+    private float diagonalMayor;
+    private float diagonalMenor;
 
-public class Rectangulo extends Figura {
-    private Float base;
-    private Float altura;
-
-    public Rectangulo(Float base, Float altura) {
-        super("Rectángulo");
-        this.base = base;
-        this.altura = altura;
-    }
-
-    public double getBase() {
-        return base;
-    }
-
-    public double getAltura() {
-        return altura;
-    }
-
-    @Override
-    public double calcularPerimetro() {
-        return 2 * (base + altura);
+    public Rombo(float diagonalMayor, float diagonalMenor) {
+        super("Rombo");
+        if (diagonalMayor <= 0 || diagonalMenor <= 0) {
+            throw new IllegalArgumentException("Las diagonales deben ser positivas");
+        }
+        this.diagonalMayor = diagonalMayor;
+        this.diagonalMenor = diagonalMenor;
     }
 
     @Override
     public double calcularArea() {
-        return base * altura;
+        return (diagonalMayor * diagonalMenor) / 2.0;
     }
 
     @Override
-    public String toString() {
-        return super.toString() + "\n Base: " + base + " \n Altura: " + altura;
+    public double calcularPerimetro() {
+        double lado = Math.sqrt(Math.pow(diagonalMayor/2, 2) + Math.pow(diagonalMenor/2, 2));
+        return 4 * lado;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (!super.equals(obj)) return false;
-        Rectangulo otro = (Rectangulo) obj;
-        return Double.compare(otro.base, base) == 0 && 
-               Double.compare(otro.altura, altura) == 0;
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Rombo rombo = (Rombo) obj;
+        return Float.compare(rombo.diagonalMayor, diagonalMayor) == 0 &&
+               Float.compare(rombo.diagonalMenor, diagonalMenor) == 0;
     }
 
+    @Override
+    public String toString() {
+        return "Diagonal mayor: " + diagonalMayor + "\n Diagonal menor: " + diagonalMenor;
+    }
+
+    // Getters
+    public float getDiagonalMayor() {
+        return diagonalMayor;
+    }
+
+    public float getDiagonalMenor() {
+        return diagonalMenor;
+    }
 }
