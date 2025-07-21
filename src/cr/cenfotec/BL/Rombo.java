@@ -35,7 +35,7 @@ public class Rombo extends Figura {
 
     @Override
     public String toString() {
-        return String.format("Rombo [Dmayor=%.2f, Dmenor=%.2f]", diagonalMayor, diagonalMenor);
+        return "Diagonal mayor: " + diagonalMayor + "\n Diagonal menor: " + diagonalMenor;
     }
 
     // Getters

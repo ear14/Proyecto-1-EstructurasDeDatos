@@ -31,7 +31,7 @@ public class Rectangulo extends Figura {
 
     @Override
     public String toString() {
-        return super.toString() + ", Base: " + base + ", Altura: " + altura;
+        return super.toString() + "\n Base: " + base + " \n Altura: " + altura;
     }
 
     @Override

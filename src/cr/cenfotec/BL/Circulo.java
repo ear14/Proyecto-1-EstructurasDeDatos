@@ -32,6 +32,6 @@ public class Circulo extends Figura {
 
     @Override
     public String toString() {
-        return String.format("Circulo [radio=%.2f]", radio);
+        return super.toString() + "\n Radio: " + radio;
     }
 }
