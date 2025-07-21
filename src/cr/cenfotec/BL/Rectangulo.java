@@ -42,9 +42,4 @@ public class Rectangulo extends Figura {
                Double.compare(otro.altura, altura) == 0;
     }
 
-    @Override
-    public boolean equals() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'equals'");
-    }
 }

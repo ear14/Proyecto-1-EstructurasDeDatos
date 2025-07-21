@@ -1,11 +1,13 @@
 package cr.cenfotec.BL;
 
 public class Cubo extends Cuerpo {
-    private float arista;
+    private Cuadrado cuadrado;
 
-    public Cubo(float arista) {
-        super(new Cuadrado(arista)); 
-        this.arista = arista;
+    // Constructor 
+    public Cubo(float ladoCuadrado) {
+        super("Cubo");
+        this.cuadrado = new Cuadrado(ladoCuadrado);
+        agregarFigura(cuadrado);
     }
 
     @Override
@@ -32,11 +34,11 @@ public class Cubo extends Cuerpo {
 
     @Override
     public String toString() {
-        return String.format("Cubo [arista=%.2f]", arista);
+        return (super.toString() + "\n Cuadrado: " + cuadrado);
     }
 
     // Getter
-    public float getArista() {
-        return arista;
+    public Cuadrado getCuadrado() {
+        return  cuadrado;
     }
 }

@@ -1,9 +1,9 @@
 package cr.cenfotec.BL;
 
 public interface Forma {
-    Float calcularPerimetro(); 
-    float calcularArea();
+    double calcularPerimetro(); 
+    double calcularArea();
     void imprimirInformacion();
-    boolean equals();
+    boolean equals(Object object);
     String toString();
 }

@@ -12,20 +12,6 @@ public abstract class Triangulo extends Figura {
         this.lado3 = lado3;
     }
 
-    public static Triangulo crear(float lado1, float lado2, float lado3) {
-        if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0) {
-            throw new IllegalArgumentException("Los lados deben ser positivos");
-        }
-        
-        if (lado1 == lado2 && lado2 == lado3) {
-            return new Equilatero(lado1);
-        } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
-            return new Isosceles(lado1, lado2, lado3);
-        } else {
-            return new Escaleno(lado1, lado2, lado3);
-        }
-    }
-
     @Override
     public double calcularPerimetro() {
         return lado1 + lado2 + lado3;

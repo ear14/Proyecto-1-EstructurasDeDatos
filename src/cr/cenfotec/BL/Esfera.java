@@ -28,22 +28,23 @@ public class Esfera extends Cuerpo{
     }
 
     @Override
-    public Float calcularPerimetro() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPerimetro'");
+    public double calcularPerimetro() {
+        return 2 * Math.PI * radio;
     }
 
     @Override
-    public float calcularArea() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularArea'");
+    public double calcularArea() {
+        return 4 * Math.PI * Math.pow(radio, 2);
     }
 
     @Override
-    public boolean equals() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'equals'");
-    }
-    
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Esfera otra = (Esfera) obj;
+        return Double.compare(otra.radio, radio) == 0;
+    }    
 }
 
