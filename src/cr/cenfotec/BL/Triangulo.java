@@ -1,34 +1,14 @@
 package cr.cenfotec.BL;
 
 public abstract class Triangulo extends Figura {
-    protected float lado1;
-    protected float lado2;
-    protected float lado3;
 
-    public Triangulo(float lado1, float lado2, float lado3, String tipo) {
-        super(tipo);
-        this.lado1 = lado1;
-        this.lado2 = lado2;
-        this.lado3 = lado3;
+    public Triangulo(String nombre) {
+        super(nombre);
     }
 
     @Override
-    public double calcularPerimetro() {
-        return lado1 + lado2 + lado3;
-    }
+    public abstract double calcularPerimetro();
 
     @Override
     public abstract double calcularArea();
-
-    @Override
-    public void imprimirInformacion() {
-        System.out.println("Lados: " + lado1 + ", " + lado2 + ", " + lado3);
-        System.out.println("Area: " + calcularArea());
-        System.out.println("Perímetro: " + calcularPerimetro());
-    }
-
-    // Getters
-    public float getLado1() { return lado1; }
-    public float getLado2() { return lado2; }
-    public float getLado3() { return lado3; }
 }

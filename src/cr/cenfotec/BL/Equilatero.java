@@ -4,16 +4,21 @@ public class Equilatero extends Triangulo {
     private float lado; 
 
     public Equilatero(float lado) {
-        this.lado = lado
-        super(lado, lado, lado, "Triángulo Equilatero");
+        super("Triángulo Equilatero");
+        this.lado = lado;
     }
 
     @Override
     public double calcularArea() {
-        return (Math.sqrt(3)/4) * Math.pow(lado1, 2);
+        return (Math.sqrt(3)/4) * Math.pow(lado, 2);
     }
 
     public float getLado() {
         return lado;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+       return lado * 3; 
     }
 }
