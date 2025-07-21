@@ -4,6 +4,7 @@ public class Equilatero extends Triangulo {
     private float lado; 
 
     public Equilatero(float lado) {
+        this.lado = lado
         super(lado, lado, lado, "Triángulo Equilatero");
     }
 
