@@ -31,6 +31,7 @@ public class Menu {
                     System.out.println("2. Rectangulo");
                     System.out.println("3. Rombo");
                     System.out.println("4. Triangulo");
+                    System.out.print("Seleccione una opción: ");
                     int opcionAgregarFigura = Integer.parseInt(scanner.nextLine());
                     switch (opcionAgregarFigura) {
                         case 1:
@@ -63,6 +64,7 @@ public class Menu {
                             Rombo rombo = new Rombo(diagonalMayor, diagonalMenor);
                             coleccion.agregarFigura(rombo);
                             System.out.println("Figura agregada exitosamente");
+                            break;
                         case 4:
                             System.out.println("Ingrese el primer lado del triángulo");
                             float lado1 = Float.parseFloat(scanner.nextLine());
@@ -70,28 +72,7 @@ public class Menu {
                             float lado2 = Float.parseFloat(scanner.nextLine());
                             System.out.println("Ingrese el primer lado del triángulo");
                             float lado3 = Float.parseFloat(scanner.nextLine());
-
-                            if (lado1 == lado2 && lado2 == lado3) {
-                                Equilatero equilatero = new Equilatero(lado1);
-                                coleccion.agregarFigura(equilatero);
-                            } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
-                                float iguales, baseTriangulo;
-                                if (lado1 == lado2) {
-                                    iguales = lado1;
-                                    baseTriangulo = lado3;
-                                } else if (lado1 == lado3) {
-                                    iguales = lado1;
-                                    baseTriangulo = lado2;
-                                } else {
-                                    iguales = lado2;
-                                    baseTriangulo = lado1;
-                                }
-                                Isosceles isosceles = new Isosceles(baseTriangulo, iguales);
-                                coleccion.agregarFigura(isosceles);
-                            } else {
-                                Escaleno escaleno = new Escaleno(lado1, lado2, lado3);
-                                coleccion.agregarFigura(escaleno);
-                            }
+                            coleccion.agregarFigura(definirTipoTriangulo(lado1, lado2, lado3));
                             System.out.println("Figura agregada exitosamente");
                             break;
                         default:
@@ -105,6 +86,7 @@ public class Menu {
                     System.out.println("2. Cilindro");
                     System.out.println("3. Tetraedro");
                     System.out.println("4. Esfera");
+                    System.out.print("Seleccione una opción: ");
                     int opcionAgregarCuerpo = Integer.parseInt(scanner.nextLine());
                     switch (opcionAgregarCuerpo) {
                         case 1:
@@ -133,7 +115,7 @@ public class Menu {
                             float ladoTrianguloTetraedro2 = Float.parseFloat(scanner.nextLine());
                             System.out.print("Lado #3:");
                             float ladoTrianguloTetraedro3 = Float.parseFloat(scanner.nextLine());
-                            Tetraedro tetraedro = new Tetraedro(ladoTrianguloTetraedro3);
+                            Tetraedro tetraedro = new Tetraedro(definirTipoTriangulo(ladoTrianguloTetraedro1, ladoTrianguloTetraedro2, ladoTrianguloTetraedro3));
                             coleccion.agregarCuerpo(tetraedro);
                             System.out.println("Cuerpo agregado exitosamente");
                             break;
@@ -174,4 +156,25 @@ public class Menu {
 
         } while (opcion != 8);
     }
+    public Triangulo definirTipoTriangulo(float lado1, float lado2, float lado3){
+        if (lado1 == lado2 && lado2 == lado3) {
+                return new Equilatero(lado1);
+            } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+                float iguales, baseTriangulo;
+                if (lado1 == lado2) {
+                    iguales = lado1;
+                    baseTriangulo = lado3;
+                } else if (lado1 == lado3) {
+                    iguales = lado1;
+                    baseTriangulo = lado2;
+                } else {
+                    iguales = lado2;
+                    baseTriangulo = lado1;
+                }
+                return new Isosceles(baseTriangulo, iguales);
+                
+            } else {
+                return new Escaleno(lado1, lado2, lado3);
+            }
+    } 
 }
