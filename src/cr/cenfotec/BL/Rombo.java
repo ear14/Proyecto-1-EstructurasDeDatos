@@ -1,49 +1,45 @@
 package cr.cenfotec.BL;
 
-public class Rombo extends Figura {
-    private float diagonalMayor;
-    private float diagonalMenor;
 
-    public Rombo(float diagonalMayor, float diagonalMenor) {
-        super("Rombo");
-        if (diagonalMayor <= 0 || diagonalMenor <= 0) {
-            throw new IllegalArgumentException("Las diagonales deben ser positivas");
-        }
-        this.diagonalMayor = diagonalMayor;
-        this.diagonalMenor = diagonalMenor;
+public class Rectangulo extends Figura {
+    private Float base;
+    private Float altura;
+
+    public Rectangulo(Float base, Float altura) {
+        super("Rectángulo");
+        this.base = base;
+        this.altura = altura;
     }
 
-    @Override
-    public double calcularArea() {
-        return (diagonalMayor * diagonalMenor) / 2.0;
+    public double getBase() {
+        return base;
+    }
+
+    public double getAltura() {
+        return altura;
     }
 
     @Override
     public double calcularPerimetro() {
-        double lado = Math.sqrt(Math.pow(diagonalMayor/2, 2) + Math.pow(diagonalMenor/2, 2));
-        return 4 * lado;
+        return 2 * (base + altura);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Rombo rombo = (Rombo) obj;
-        return Float.compare(rombo.diagonalMayor, diagonalMayor) == 0 &&
-               Float.compare(rombo.diagonalMenor, diagonalMenor) == 0;
+    public double calcularArea() {
+        return base * altura;
     }
 
     @Override
     public String toString() {
-        return "Diagonal mayor: " + diagonalMayor + "\n Diagonal menor: " + diagonalMenor;
+        return super.toString() + "\n Base: " + base + " \n Altura: " + altura;
     }
 
-    // Getters
-    public float getDiagonalMayor() {
-        return diagonalMayor;
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)) return false;
+        Rectangulo otro = (Rectangulo) obj;
+        return Double.compare(otro.base, base) == 0 && 
+               Double.compare(otro.altura, altura) == 0;
     }
 
-    public float getDiagonalMenor() {
-        return diagonalMenor;
-    }
 }

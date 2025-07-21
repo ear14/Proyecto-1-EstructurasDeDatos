@@ -20,17 +20,20 @@ public class Coleccion{
     }
 
     public void listarFiguras(){
+        int contador = 1;
         for (Figura figura : this.coleccionFiguras){
-            System.out.println("Figura #" + coleccionFiguras.indexOf(figura)  + ":");
+            System.out.println("Figura #" + contador  + ":");
             figura.imprimirInformacion();
+            contador++;
         }
     }
 
     public void listarCuerpos(){
-        
+        int contador = 1;
         for (Cuerpo cuerpo : this.coleccionCuerpos){
-            System.out.println("Cuerpo #" + coleccionCuerpos.indexOf(cuerpo) + ":");
-            cuerpo.toString();
+            System.out.println("Cuerpo #" + contador + ":");
+            cuerpo.imprimirInformacion();
+            contador++;
         }
     }
 

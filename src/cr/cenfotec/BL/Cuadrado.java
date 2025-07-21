@@ -1,6 +1,6 @@
 package cr.cenfotec.BL;
 
-public class Cuadrado extends Rectangulo {
+public class Cuadrado extends Rectangulo{
     public Cuadrado(float lado) {
         super(lado, lado);
         this.nombre = "Cuadrado";

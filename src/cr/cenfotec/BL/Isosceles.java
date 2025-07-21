@@ -14,7 +14,7 @@ public class Isosceles extends Triangulo {
     @Override
     public double calcularArea() {
         double base = ladoDiferente;
-        double altura = Math.sqrt(Math.pow(ladoDiferente, 2) - Math.pow(ladoIgual/2.0, 2));
+        double altura = calcularAltura();
         return (base * altura) / 2;
     }
 
@@ -33,5 +33,18 @@ public class Isosceles extends Triangulo {
     @Override
     public double calcularPerimetro() {
         return ladoIgual * 2 + ladoDiferente;
+    }
+
+    @Override
+    public double calcularAltura() {
+        return Math.sqrt(Math.pow(ladoDiferente, 2) - Math.pow(ladoIgual/2.0, 2));
+    }
+
+    public float getLadoDiferente() {
+        return ladoDiferente;
+    }
+    
+    public float getLadoIgual() {
+        return ladoIgual;
     }
 }

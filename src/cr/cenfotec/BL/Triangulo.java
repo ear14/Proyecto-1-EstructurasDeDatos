@@ -11,4 +11,6 @@ public abstract class Triangulo extends Figura {
 
     @Override
     public abstract double calcularArea();
+
+    public abstract double calcularAltura();
 }

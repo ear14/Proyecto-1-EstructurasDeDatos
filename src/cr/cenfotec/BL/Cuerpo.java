@@ -43,8 +43,5 @@ public abstract class Cuerpo implements Forma{
     }
 
     //metodos abstractos
-    abstract float calcularVolumen();
-
-
+    abstract double calcularVolumen();
 }
-    

@@ -68,9 +68,9 @@ public class Menu {
                         case 4:
                             System.out.println("Ingrese el primer lado del triángulo");
                             float lado1 = Float.parseFloat(scanner.nextLine());
-                            System.out.println("Ingrese el primer lado del triángulo");
+                            System.out.println("Ingrese el segundo lado del triángulo");
                             float lado2 = Float.parseFloat(scanner.nextLine());
-                            System.out.println("Ingrese el primer lado del triángulo");
+                            System.out.println("Ingrese el tercer lado del triángulo");
                             float lado3 = Float.parseFloat(scanner.nextLine());
                             coleccion.agregarFigura(definirTipoTriangulo(lado1, lado2, lado3));
                             System.out.println("Figura agregada exitosamente");

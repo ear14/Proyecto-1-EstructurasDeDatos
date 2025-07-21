@@ -20,12 +20,12 @@ public class Rectangulo extends Figura {
     }
 
     @Override
-    public Float calcularPerimetro() {
+    public double calcularPerimetro() {
         return 2 * (base + altura);
     }
 
     @Override
-    public float calcularArea() {
+    public double calcularArea() {
         return base * altura;
     }
 

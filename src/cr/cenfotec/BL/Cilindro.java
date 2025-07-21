@@ -16,22 +16,23 @@ public class Cilindro extends Cuerpo {
         agregarFigura(circulo);
     }
 
+
     //metodo para calcular el volumen
     @Override
-    float calcularVolumen() {
+    double calcularVolumen() {
         return (float)(Math.PI * Math.pow(circulo.getRadio(), 2) * rectangulo.getAltura());
     }
 
     @Override
-    public float calcularPerimetro() {
-        return (float)(2 * Math.PI * circulo.getRadio());
+    public double calcularPerimetro() {
+        return 2 * Math.PI * circulo.getRadio();
     }
 
     @Override
-    public float calcularArea() {
+    public double calcularArea() {
         float r = circulo.getRadio();
-        float h = rectangulo.getAltura();
-        return (float)(2 * Math.PI * r * (r + h));
+        double h = rectangulo.getAltura();
+        return (2 * Math.PI * r * (r + h));
     }
     
     @Override

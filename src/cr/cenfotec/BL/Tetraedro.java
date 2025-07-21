@@ -1,54 +1,65 @@
 package cr.cenfotec.BL;
 
-public class Tetraedro extends Cuerpo{
-    
+public class Tetraedro extends Cuerpo {
 
-    //atributos
-    private Equilatero equilatero;
+    // atributos
+    private Triangulo triangulo;
 
-    //constructor
-    public Tetraedro(float arista){
+    // constructor
+    public Tetraedro(Triangulo triangulo) {
         super("Tetraedro");
-        this.equilatero = new Equilatero(arista);
-        agregarFigura(equilatero)
+        this.triangulo = triangulo;
+        agregarFigura(triangulo);
     }
 
-    //metodo para calcular el volumen
+    // metodo para calcular el volumen
     @Override
-    float calcularVolumen() {
-        float arista = equilatero.getLado(); 
-        return (float)(Math.pow(arista, 3) / (6 * Math.sqrt(2)));
-    }
-
-    @Override
-    public Float calcularPerimetro() {
-        float lado = equilatero.getLado();
-        return 6 * lado;
+    double calcularVolumen() {
+        return 1 / 3 * triangulo.calcularArea() * triangulo.calcularAltura();
     }
 
     @Override
-    public float calcularArea() {
-        float lado = equilatero.getLado();
-        return (float)(Math.sqrt(3) * Math.pow(lado, 2));
+    public double calcularPerimetro() {
+        double perimetroTetraedro;
+        if (triangulo.getNombre().equals("Triangulo isósceles")){
+            Isosceles otroTriangulo = (Isosceles) triangulo; 
+            perimetroTetraedro = otroTriangulo.getLadoDiferente() * 3 + otroTriangulo.getLadoIgual() *3; 
+        }else if(triangulo.getNombre().equals("Triángulo Equilatero")){
+            Equilatero otroTriangulo = (Equilatero) triangulo;
+            perimetroTetraedro = otroTriangulo.getLado() * 6; 
+        }else{
+            Escaleno otroTriangulo = (Escaleno) triangulo;
+            perimetroTetraedro = otroTriangulo.lado1 * 2 + otroTriangulo.lado2 *2 + otroTriangulo.lado3 *2;
+        }
+        return perimetroTetraedro; 
     }
 
-   @Override
+    @Override
+    public double calcularArea() {
+        return triangulo.calcularArea() * 4;
+    }
+
+    @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
         Tetraedro otro = (Tetraedro) obj;
         return this.nombre.equals(otro.getNombre()) &&
-            this.equilatero.getLado() == otro.equilatero.getLado();
+                this.triangulo.calcularAltura() == otro.triangulo.calcularAltura()
+                && this.triangulo.calcularArea() == otro.triangulo.calcularArea()
+                && this.triangulo.calcularPerimetro() == otro.triangulo.calcularPerimetro();
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Arista del tetraedro: " + equilatero.getLado();
+        return super.toString() + " Aristas del tetraedro: " + triangulo.toString();
     }
 
     // Getter
-    public float getArista() {
-        return arista;
+    public Triangulo getTriangulo() {
+        return triangulo;
     }
 }

@@ -21,4 +21,9 @@ public class Equilatero extends Triangulo {
     public double calcularPerimetro() {
        return lado * 3; 
     }
+
+    @Override
+    public double calcularAltura() {
+        return (Math.sqrt(3) / 2) * lado; 
+    }
 }

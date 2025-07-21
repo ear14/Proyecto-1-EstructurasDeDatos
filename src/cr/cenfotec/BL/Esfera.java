@@ -19,7 +19,7 @@ public class Esfera extends Cuerpo{
     public void setRadio(float radioNuevo) {this.radio = radioNuevo;}
     
     @Override
-    float calcularVolumen() {
+    double calcularVolumen() {
         return (float)((4.0 / 3.0) * Math.PI * Math.pow(radio, 3));
     }
 
@@ -45,6 +45,5 @@ public class Esfera extends Cuerpo{
             return false;
         Esfera otra = (Esfera) obj;
         return Double.compare(otra.radio, radio) == 0;
-    }    
+    }   
 }
-

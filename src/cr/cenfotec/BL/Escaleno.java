@@ -28,4 +28,16 @@ public class Escaleno extends Triangulo {
         return lado1 + lado2 + lado3;
     }
 
+    @Override
+    public double calcularAltura() {
+        float base;
+        if (lado1 > lado2 && lado1 > lado3) {
+            base = lado1;
+        } else if (lado2 > lado1 && lado2 > lado3) {
+            base = lado3;
+        } else {
+            base = lado3;
+        }
+        return (2 * calcularArea()) * base;
+    }
 }
